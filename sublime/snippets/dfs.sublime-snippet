@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+void dfs(ll src=0,ll par=-1){
+    for (auto i:adj[src]){
+        if(i!=par)
+            dfs(i,src);
+    }
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>dfs-tree</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>
