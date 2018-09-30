@@ -154,8 +154,11 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
-
-bindsym $mod+l exec "i3lock --c 000606;xset dpms 0;xset dpms 0;"
+#click on tap
+exec xinput set-prop 12 "libinput Tapping Enabled" 1
+#set display off on locking
+bindsym $mod+l exec "i3lock --c 000606;xset dpms force off;xset dpms force off;"
+bindsym Control+$sup+s exec "systemctl suspend"
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 bindsym $sup+Tab focus right
@@ -165,8 +168,11 @@ bindsym $sup+1 exec --no-startup-id "google-chrome-stable"
 bindsym $sup+3 exec --no-startup-id "subl"
 bindsym Control+Shift+Escape exec --no-startup-id "gnome-system-monitor"
 bindsym $sup+f exec --no-startup-id "nautilus"
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -2% #decrease sound volume
-bindsym XF86MonBrightnessUp exec xbacklight -inc 2 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 2 # decrease screen brightness
+#volume control mappings
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +3% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -3% #decrease sound volume
+#brightness control mappings
+bindsym XF86MonBrightnessUp exec xbacklight -inc 1 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 1 # decrease screen brightness
+#screenshot control
 bindsym Print exec --no-startup-id scrot ~/Pictures/Screenshot_%Y-%m-%d-%T.png

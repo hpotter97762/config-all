@@ -1,0 +1,12 @@
+[Unit]
+Description=Custom Suspend for aditya
+Before=suspend.target
+
+[Service]
+User=aditya
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/usr/bin/i3lock -c 161616 -e
+
+[Install]
+WantedBy=suspend.target
