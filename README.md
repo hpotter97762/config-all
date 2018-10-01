@@ -23,3 +23,6 @@ Now reboot
 This is to first lock the system with i3lock and then suspend the system. 
 Add the suspend@aditya.service file in /lib/systemd/system folder. 
 Run systemctl enable suspend@aditya.service 
+
+# i3 Status bar
+To report battery % upto 100 and cpu temperature, save the config i3status.conf as ~/.i3status.conf or /etc/i3status.conf 
