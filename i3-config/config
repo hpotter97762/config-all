@@ -155,9 +155,10 @@ bar {
         status_command i3status
 }
 #click on tap
-exec xinput set-prop 12 "libinput Tapping Enabled" 1
+exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 exec "nm-applet &"
-
+exec --no-startup-id xsetroot -solid "#000505"
+exec --no-startup-id feh --bg-fill "~/Pictures/Wallpapers/Ken.Kaneki.jpg"
 #set display off on locking
 bindsym $mod+l exec "i3lock --c 000606;xset dpms force off;xset dpms force off;"
 bindsym Control+$sup+s exec "systemctl suspend"
@@ -171,8 +172,8 @@ bindsym $sup+3 exec --no-startup-id "subl"
 bindsym Control+Shift+Escape exec --no-startup-id "gnome-system-monitor"
 bindsym $sup+f exec --no-startup-id "nautilus"
 #volume control mappings
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +3% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -3% #decrease sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 #brightness control mappings
 bindsym XF86MonBrightnessUp exec xbacklight -inc 1 # increase screen brightness

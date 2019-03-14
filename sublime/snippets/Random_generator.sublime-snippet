@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+//Random Number Generator
+inline ull Rand(ll a,ll b){
+	uniform_int_distribution<uint64_t>dis(a,b);
+	mt19937_64 gen(chrono::steady_clock::now().time_since_epoch().count());
+	return dis(gen);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>random</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

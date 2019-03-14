@@ -1,0 +1,31 @@
+<snippet>
+	<content><![CDATA[
+#include<vector>
+#include<iostream>
+#define INIT std::ios_base::sync_with_stdio(0);cin.tie(0);
+typedef long long int ll;
+typedef std::vector<ll> vi;
+#ifdef JUDGE
+#include <fstream>
+std::ifstream cin("input.txt");
+std::ofstream cout("output.txt");
+#else
+#include <iostream>
+using std::cin;
+using std::cout;
+#endif
+
+//##########################################################################################//
+//Actual code starts here//
+const ll mod=1e9+7;
+
+int main(){
+    INIT;
+    return 0;
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>course-temp</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

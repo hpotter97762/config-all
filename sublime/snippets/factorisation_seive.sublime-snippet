@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+vi prime,fac(100000,0);
+void  seive(){
+	fac[1]=1;
+	for(int i=2;i<61;++i){
+		if(fac[i]==0){
+			prime.pb(i);
+			for(int j=i;j<61;j+=i)
+				fac[j]=i;
+		}
+	}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>seive</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
