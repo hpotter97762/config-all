@@ -1,0 +1,177 @@
+{
+	// Place your snippets for cpp here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	"courseTemplate": {
+		"prefix": "course-template",
+		"body": [
+		  "#include<vector>",
+		  "#include<iostream>",
+		  "#define INIT std::ios_base::sync_with_stdio(0);cin.tie(0);",
+		  "typedef long long int ll;",
+		  "typedef std::vector<ll> vi;",
+		  "#ifdef JUDGE",
+		  "#include <fstream>",
+		  "std::ifstream cin(\"input.txt\");",
+		  "std::ofstream cout(\"output.txt\");",
+		  "#else",
+		  "#include <iostream>",
+		  "using std::cin;",
+		  "using std::cout;",
+		  "#endif",
+		  "",
+		  "//##########################################################################################//",
+		  "//Actual code starts here//",
+		  "const ll mod=1e9+7;",
+		  "",
+		  "int main(){",
+		  "    INIT;",
+		  "    return 0;",
+		  "}"
+		],
+		"description": ""
+	  },
+	  "factorisation": {
+		"prefix": "seive",
+		"body": [
+		  "vi prime;",
+		  "ll fac[sz];",
+		  "void  seive(){",
+		  "\tfac[1]=1;",
+		  "\tfor(ll i=2;i<sz;++i){",
+		  "\t\tif(fac[i]==0){",
+		  "\t\t\tprime.pb(i);",
+		  "\t\t\tfac[i]=i;",
+		  "\t\t\tfor(ll j=i*i;j<sz;j+=i)",
+		  "\t\t\t\tif (fac[j] == 0)",
+		  "\t\t\t\t\tfac[j]=i;",
+		  "\t\t}",
+		  "\t}",
+		  "}"
+		],
+		"description": ""
+	  },
+	  "gcd": {
+		"prefix": "gcd-template",
+		"body": [
+		  "ll gcd(ll a,ll b){",
+		  "\twhile(a&&b){",
+		  "\t\tll tp=b;",
+		  "\t\tb=a%b;",
+		  "\t\ta=tp;",
+		  "\t}",
+		  "\treturn a+b;",
+		  "}"
+		],
+		"description": ""
+	  },
+	  "hashmap": {
+		"prefix": "hash",
+		"body": [
+		  "//HashMap",
+		  "struct chash {",
+		  "\tstatic uint64_t splitmix64(uint64_t x) {",
+		  "\t\t// http://xorshift.di.unimi.it/splitmix64.c",
+		  "\t\tx += 0x9e3779b97f4a7c15;",
+		  "\t\tx = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;",
+		  "\t\tx = (x ^ (x >> 27)) * 0x94d049bb133111eb;",
+		  "\t\treturn x ^ (x >> 31);",
+		  "\t}",
+		  "",
+		  "\tsize_t operator()(uint64_t x) const {",
+		  "\t\tstatic const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();",
+		  "\t\treturn splitmix64(x + FIXED_RANDOM);",
+		  "\t}",
+		  "};",
+		  "unordered_map<ll,ll,chash> hashMap;"
+		],
+		"description": "hashmap"
+	  },
+	  "Initial-CP": {
+		"prefix": "init-template",
+		"body": [
+			"#include<bits/stdc++.h>",
+			"#include <ext/pb_ds/assoc_container.hpp>",
+			"#include <ext/pb_ds/tree_policy.hpp>",
+			"#define fs first",
+			"#define sc second",
+			"#define pb push_back",
+			"#define INIT std::ios_base::sync_with_stdio(0);cin.tie(0);cout<<fixed<<setprecision(30);",
+			"#define pi 3.141592653589793238462643383279502884197",
+			"//#define e 2.7182818284590452353602874713526624977572",
+			"using namespace std;",
+			"using namespace __gnu_pbds;",
+			"using namespace std::chrono;",
+			"",
+			"typedef long long int ll;",
+			"typedef unsigned long long ull;",
+			"typedef long double ld;",
+			"typedef std::vector<ll> vi;",
+			"typedef std::vector<std::vector<ll> > vvi;",
+			"typedef std::vector<bool> vb;",
+			"typedef std::vector<char> vc;",
+			"typedef std::pair<ll,ll> pii;",
+			"typedef std::vector<pii> vii;",
+			"typedef tree<int,null_type,less<int>,rb_tree_tag,tree_order_statistics_node_update>ordered_set;",
+			"",
+			"//##########################################################################################//",
+			"//Actual code starts here//",
+			"const ll mod=1e9+7;",
+			"#define sz 100000",
+			"",
+			"template <typename T>void print(const T &c){for (const auto &e : c)cout << e << ' ';cout << '\\n';}",
+			"",
+			"void print(ll* a,ll n){for(int i=0;i<n;++i)cout<<a[i]<<' ';cout<<'\\n';}",
+			"",
+			"inline void solve(){",
+			"\t//do not use auto",
+			"\t//always pass non primary variables by reference",
+			"\t//creating vector of fixed size takes time. Do not put it in loop",
+			"}",
+			"",
+			"int main(){",
+			"\tauto start = high_resolution_clock::now();",
+			"\tINIT;",
+			"\tll t;",
+			"\tt=1;",
+			"\twhile(t--){",
+			"\t\tsolve();",
+			"\t}",
+			"\tauto stop = high_resolution_clock::now();",
+			"\tauto duration = duration_cast<microseconds>(stop - start);",
+			"\t//cout << \"Total time taken: \"<< duration.count() << \" microseconds\" << endl; ",
+			"\treturn 0;",
+			"}"
+		]
+	},
+	  "modexp": {
+		"prefix": "modexp-template",
+		"body": [
+		  "ll modexp(ll a,ll b,ll m=mod){",
+		  "\tll ans=1;",
+		  "\twhile(b>0){",
+		  "\t\tif(b&1)",
+		  "\t\t\tans=(ans*a)%m;",
+		  "\t\ta=(a*a)%m;",
+		  "\t\tb>>=1;",
+		  "\t}",
+		  "\treturn ans;",
+		  "}"
+		],
+		"description": "modexp"
+	  },
+	  "Random-generator": {
+		"prefix": "rand-gen",
+		"body": [
+		  "//Random Number Generator",
+		  "inline ull Rand(ll a,ll b){",
+		  "\tuniform_int_distribution<uint64_t>dis(a,b);",
+		  "\tmt19937_64 gen(chrono::steady_clock::now().time_since_epoch().count());",
+		  "\treturn dis(gen);",
+		  "}"
+		],
+		"description": "Random-generator"
+	  }
+}
